@@ -1,0 +1,177 @@
+{
+  "extends": ["tslint-angular", "tslint-microsoft-contrib"],
+  "rulesDirectory": ["tslint-consistent-codestyle"],
+  "rules": {
+    "arrow-return-shorthand": true,
+    "callable-types": true,
+    "class-name": true,
+    "deprecation": {
+      "severity": "warn"
+    },
+    "forin": true,
+    "import-blacklist": [true, "rxjs/Rx"],
+    "interface-over-type-literal": true,
+    "member-access": [true, "check-accessor", "check-parameter-property"],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "static-field",
+          "instance-field",
+          "static-method",
+          "instance-method"
+        ]
+      }
+    ],
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-super": true,
+    "no-empty": false,
+    "no-empty-interface": true,
+    "no-eval": true,
+    "no-inferrable-types": [true, "ignore-params"],
+    "no-misused-new": true,
+    "no-non-null-assertion": true,
+    "no-shadowed-variable": true,
+    "no-string-literal": false,
+    "no-string-throw": true,
+    "no-switch-case-fall-through": true,
+    "no-unnecessary-initializer": true,
+    "no-unused-expression": true,
+    "no-var-keyword": true,
+    "object-literal-sort-keys": false,
+    "prefer-const": true,
+    "radix": true,
+    "triple-equals": [true, "allow-null-check"],
+    "unified-signatures": true,
+    "variable-name": false,
+    "directive-selector": [true, "attribute", "tc", "camelCase"],
+    "component-selector": [true, "element", "tc", "kebab-case"],
+    "no-conflicting-lifecycle": true,
+    "no-host-metadata-property": true,
+    "no-input-rename": true,
+    "no-inputs-metadata-property": true,
+    "no-output-native": true,
+    "no-output-on-prefix": true,
+    "no-output-rename": true,
+    "no-outputs-metadata-property": true,
+    "template-banana-in-box": true,
+    "template-no-negated-async": true,
+    "use-lifecycle-interface": true,
+    "use-pipe-transform-interface": true,
+    "no-unused": [
+      true,
+      "unused-class-expression-name",
+      "unused-function-expression-name",
+      "unused-catch-binding"
+    ],
+    "early-exit": [
+      true,
+      {
+        "max-length": 4,
+        "ignore-constructor": true
+      }
+    ],
+    "naming-convention": [
+      true,
+      {
+        "type": "default",
+        "format": "camelCase",
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "type": "variable",
+        "modifiers": ["global", "const"],
+        "format": ["camelCase", "UPPER_CASE"]
+      },
+      {
+        "type": "functionVariable",
+        "modifiers": ["export", "const"],
+        "format": "camelCase"
+      },
+      {
+        "type": "parameter",
+        "modifiers": "unused",
+        "leadingUnderscore": "allow"
+      },
+      {
+        "type": "member",
+        "modifiers": "private",
+        "leadingUnderscore": "require"
+      },
+      {
+        "type": "member",
+        "modifiers": "protected",
+        "leadingUnderscore": "require"
+      },
+      {
+        "type": "method",
+        "filter": "^toJSON$",
+        "format": null
+      },
+      {
+        "type": "property",
+        "modifiers": ["public", "static", "const"],
+        "format": "UPPER_CASE"
+      },
+      {
+        "type": "type",
+        "format": "PascalCase"
+      },
+      {
+        "type": "class",
+        "modifiers": "abstract",
+        "prefix": "Abstract"
+      },
+      {
+        "type": "interface",
+        "prefix": "I"
+      },
+      {
+        "type": "genericTypeParameter",
+        "prefix": "T"
+      },
+      {
+        "type": "enumMember",
+        "format": "PascalCase"
+      }
+    ],
+    "no-accessor-recursion": true,
+    "no-collapsible-if": true,
+    "no-else-after-return": true,
+    "no-return-undefined": true,
+    "no-static-this": true,
+    "no-unnecessary-type-annotation": true,
+    "no-var-before-return": true,
+    "object-shorthand-properties-first": true,
+    "parameter-properties": [
+      true,
+      "all-or-none",
+      "leading",
+      "trailing",
+      "member-access",
+      "readonly"
+    ],
+    "prefer-const-enum": true,
+    "prefer-while": true,
+    "no-function-constructor-with-string-args": false,
+    "no-reserved-keywords": false,
+    "no-increment-decrement": false,
+    "no-unnecessary-bind": false,
+    "typedef": [true, "call-signature", "parameter"],
+    "completed-docs": false,
+    "no-submodule-imports": false,
+    "no-relative-imports": false,
+    "newline-per-chained-call": false,
+    "export-name": false,
+    "no-floating-promises": false,
+    "prefer-type-cast": false,
+    "no-unnecessary-class": false,
+    "no-import-side-effect": false,
+    "no-void-expression": false
+  }
+}

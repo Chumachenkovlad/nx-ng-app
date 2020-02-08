@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "projects": {
+    "specialappname-panel": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/specialappname-panel",
+      "sourceRoot": "apps/specialappname-panel/src",
+      "prefix": "tc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/specialappname-panel",
+            "index": "apps/specialappname-panel/src/index.html",
+            "main": "apps/specialappname-panel/src/main.ts",
+            "polyfills": "apps/specialappname-panel/src/polyfills.ts",
+            "tsConfig": "apps/specialappname-panel/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/specialappname-panel/src/favicon.ico",
+              "apps/specialappname-panel/src/assets"
+            ],
+            "styles": ["apps/specialappname-panel/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/specialappname-panel/src/environments/environment.ts",
+                  "with": "apps/specialappname-panel/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "specialappname-panel:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "specialappname-panel:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "specialappname-panel:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/specialappname-panel/.eslintrc",
+            "tsConfig": [
+              "apps/specialappname-panel/tsconfig.app.json",
+              "apps/specialappname-panel/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/specialappname-panel/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/specialappname-panel/jest.config.js",
+            "tsConfig": "apps/specialappname-panel/tsconfig.spec.json",
+            "setupFile": "apps/specialappname-panel/src/test-setup.ts"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/schematics:application": {
+      "e2eTestRunner": "cypress",
+      "styleext": "scss",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/schematics:component": {
+      "styleext": "scss",
+      "changeDetection": "OnPush"
+    },
+    "@nrwl/schematics:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "specialappname-panel"
+}

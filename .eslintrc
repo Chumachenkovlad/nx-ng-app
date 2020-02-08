@@ -1,0 +1,65 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "@typescript-eslint/tslint",
+    "@nrwl/nx",
+    "sonarjs",
+    "rxjs"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:sonarjs/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/no-import-side-effect": "off",
+    "rxjs/ban-observables": "error",
+    "rxjs/ban-operators": "error",
+    "rxjs/no-async-subscribe": "error",
+    "rxjs/no-compat": "error",
+    "rxjs/no-connectable": "error",
+    "rxjs/no-create": "error",
+    "rxjs/no-explicit-generics": "error",
+    "rxjs/no-exposed-subjects": "error",
+    "rxjs/no-ignored-replay-buffer": "error",
+    "rxjs/no-internal": "error",
+    "rxjs/no-nested-subscribe": "error",
+    "rxjs/no-subject-unsubscribe": "error",
+    "rxjs/no-unsafe-catch": "error",
+    "rxjs/no-unsafe-first": "error",
+    "rxjs/no-unsafe-switchmap": "error",
+    "rxjs/no-unsafe-takeuntil": "error",
+    "@nrwl/nx/enforce-module-boundaries": [
+      "error",
+      {
+        "allow": [],
+        "depConstraints": [
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": ["*"]
+          }
+        ],
+        "enforceBuildableLibDependency": true
+      }
+    ],
+    "@typescript-eslint/tslint/config": [
+      "error",
+      {
+        "lintFile": "./tslint.json" // path to tslint.json of your project
+      }
+    ]
+  }
+}

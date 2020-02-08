@@ -1,0 +1,14 @@
+{
+    "*.html": [
+    "nx format:write --files",
+  ],
+  "*.ts": [
+    "nx format:write --files",
+    "nx affected:lint --files"
+  ],
+  "*.scss": [
+    "nx format:write --files",
+    "stylelint --fix"
+  ]
+
+}
